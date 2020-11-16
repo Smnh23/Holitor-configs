@@ -1,0 +1,16 @@
+server:
+  port: 9102
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER:http://localhost:9101/eureka/}
+      
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: microservice-product
+        uri: lb://MICROSERVICE-PRODUCT
+        predicates:
+        - Path=/api/product/**
