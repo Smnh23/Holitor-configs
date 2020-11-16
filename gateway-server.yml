@@ -10,7 +10,7 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: microservice-product
-        uri: lb://MICROSERVICE-PRODUCT
+      - id: ms-product
+        uri: lb://MS-PRODUCT
         predicates:
         - Path=/api/product/**
