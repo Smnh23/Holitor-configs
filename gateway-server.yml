@@ -10,7 +10,7 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: ms-product
-        uri: lb://MS-PRODUCT
+      - id: ms-user
+        uri: lb://MS-USER
         predicates:
-        - Path=/api/product/**
+        - Path=/api/user/**
