@@ -14,3 +14,6 @@ spring:
         uri: lb://MS-USER
         predicates:
         - Path=/api/user/**
+    loadbalancer:
+      ribbon:
+        enabled: false
