@@ -5,7 +5,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_SERVER:http://localhost:9101/eureka/}
-      
+
 spring:
   cloud:
     gateway:
@@ -14,6 +14,9 @@ spring:
         uri: lb://MS-USER
         predicates:
         - Path=/api/user/**
+      discovery:
+        locator:
+          lowerCaseServiceId: true
     loadbalancer:
       ribbon:
         enabled: false
