@@ -4,6 +4,9 @@ eureka:
       defaultZone: ${EUREKA_SERVER:http://localhost:9101/eureka/}
 
 spring:
+  autoconfigure:
+    # TODO: remove when fixed https://github.com/spring-projects/spring-security/issues/6314
+    exclude: org.springframework.boot.actuate.autoconfigure.security.reactive.ReactiveManagementWebSecurityAutoConfiguration
   thymeleaf:
     cache: false
   cloud:
