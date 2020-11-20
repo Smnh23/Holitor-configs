@@ -12,8 +12,8 @@ spring:
   cloud:
     gateway:
      routes:
-       - id: gateway-server
-         uri: lb://GATEWAY-SERVER
+       - id: ms-product
+         uri: lb://MS-PRODUCT
          predicates:
            - Path=/resource
          filters:
