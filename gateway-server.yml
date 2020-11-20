@@ -12,7 +12,7 @@ spring:
   cloud:
     gateway:
      routes:
-       - id: resource
+       - id: gateway-server
          uri: lb://GATEWAY-SERVER
          predicates:
            - Path=/resource
