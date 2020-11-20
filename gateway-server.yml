@@ -9,6 +9,16 @@ eureka:
 spring:
   thymeleaf:
     cache: false
+  cloud:
+    gateway:
+     routes:
+       - id: resource
+         uri: http://resource:9000
+         predicates:
+           - Path=/api-gateway/resource
+         filters:
+           - TokenRelay=
+           - RemoveRequestHeader=Cookie
 
 logging:
   level:
