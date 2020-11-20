@@ -6,6 +6,10 @@ eureka:
     serviceUrl:
       defaultZone: ${EUREKA_SERVER:http://localhost:9101/eureka/}
 
+spring:
+  thymeleaf:
+    cache: false
+
 logging:
   level:
     root: INFO
@@ -14,7 +18,7 @@ logging:
     org.springframework.security: DEBUG
     org.springframework.security.oauth2: DEBUG
     org.springframework.cloud.gateway: DEBUG
-    
+
 # eureka:
 #   client:
 #     serviceUrl:
