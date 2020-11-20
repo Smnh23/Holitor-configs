@@ -1,5 +1,5 @@
 server:
-  port: 9102
+  port: 8080
 
 eureka:
   client:
@@ -7,16 +7,45 @@ eureka:
       defaultZone: ${EUREKA_SERVER:http://localhost:9101/eureka/}
 
 spring:
+  autoconfigure:
+    # TODO: remove when fixed https://github.com/spring-projects/spring-security/issues/6314
+    exclude: org.springframework.boot.actuate.autoconfigure.security.reactive.ReactiveManagementWebSecurityAutoConfiguration
+  thymeleaf:
+    cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          gateway:
+            provider: uaa
+            client-id: gateway
+            client-secret: secret
+            authorization-grant-type: authorization_code
+            redirect-uri-template: "{baseUrl}/login/oauth2/code/{registrationId}"
+            scope: openid,profile,email,resource.read
+        provider:
+          uaa:
+            authorization-uri: http://localhost:8090/uaa/oauth/authorize
+            token-uri: http://uaa:8090/uaa/oauth/token
+            user-info-uri: http://uaa:8090/uaa/userinfo
+            user-name-attribute: sub
+            jwk-set-uri: http://uaa:8090/uaa/token_keys
   cloud:
     gateway:
-      routes:
-      - id: ms-user
-        uri: lb://MS-USER
-        predicates:
-        - Path=/api/user/**
-      discovery:
-        locator:
-          lowerCaseServiceId: true
-    loadbalancer:
-      ribbon:
-        enabled: false
+     routes:
+       - id: resource
+         uri: http://resource:9000
+         predicates:
+           - Path=/api-gateway/resource
+         filters:
+           - TokenRelay=
+           - RemoveRequestHeader=Cookie
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.web.HttpLogging: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
+    org.springframework.cloud.gateway: DEBUG
