@@ -13,7 +13,7 @@ spring:
     gateway:
      routes:
        - id: resource
-         uri: http://localhost:9000
+         uri: lb://GATEWAY-SERVER
          predicates:
            - Path=/resource
          filters:
