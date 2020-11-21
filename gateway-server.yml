@@ -9,13 +9,14 @@ eureka:
 #     exclude: org.springframework.boot.actuate.autoconfigure.security.reactive.ReactiveManagementWebSecurityAutoConfiguration
 #   thymeleaf:
 #     cache: false
-#   cloud:
-#     gateway:
-#      routes:
-#        - id: resource
-#          uri: lb://MS-PRODUCT
-#          predicates:
-#            - Path=/resource
+spring:
+  cloud:
+    gateway:
+     routes:
+       - id: ms-product
+         uri: lb://MS-PRODUCT
+         predicates:
+           - Path=/product
 #   security:
 #     oauth2:
 #       client:
