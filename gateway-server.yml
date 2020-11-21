@@ -12,17 +12,17 @@ eureka:
 spring:
   cloud:
     gateway:
-     routes:
-       - id: ms-product
-         uri: lb://MS-PRODUCT
-         predicates:
-           - Path=/product/**
-    globalcors:
+      globalcors:
       corsConfigurations:
-        '[/**]':
-          allowedOrigins: "*"
-          allowedMethods: "*"
-          allowedHeaders: "authorization"
+        "[/**]":
+          allowedOrigins: "https://localhost:4200"
+          allowedMethods:
+            - GET
+      routes:
+        - id: ms-product
+          uri: lb://MS-PRODUCT
+          predicates:
+            - Path=/product/**
 #   security:
 #     oauth2:
 #       client:
@@ -41,7 +41,6 @@ spring:
 #             user-info-uri: http://localhost:8090/uaa/userinfo
 #             user-name-attribute: sub
 #             jwk-set-uri: http://localhost:8090/uaa/token_keys
-
 
 # logging:
 #   level:
