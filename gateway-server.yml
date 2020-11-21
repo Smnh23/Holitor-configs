@@ -17,6 +17,12 @@ spring:
          uri: lb://MS-PRODUCT
          predicates:
            - Path=/product
+    globalcors:
+      corsConfigurations:
+        '[/**]':
+          allowedOrigins: "*"
+          allowedMethods: "*"
+          allowedHeaders: "authorization"
 #   security:
 #     oauth2:
 #       client:
