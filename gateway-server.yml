@@ -16,7 +16,7 @@ spring:
        - id: ms-product
          uri: lb://MS-PRODUCT
          predicates:
-           - Path=/product
+           - Path=/product/**
     globalcors:
       corsConfigurations:
         '[/**]':
