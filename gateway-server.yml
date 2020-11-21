@@ -17,8 +17,7 @@ spring:
          predicates:
            - Path=/resource
          filters:
-           - TokenRelay=
-           - RemoveRequestHeader=Cookie
+           - PreOauth2SSOGatewayFilter
   security:
     oauth2:
       client:
