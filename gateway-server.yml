@@ -13,11 +13,11 @@ spring:
   cloud:
     gateway:
       globalcors:
-      corsConfigurations:
-        "[/**]":
-          allowedOrigins: "*"
-          allowedMethods:
-            - GET
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
       routes:
         - id: ms-product
           uri: lb://MS-PRODUCT
