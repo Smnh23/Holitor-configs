@@ -1,40 +1,22 @@
-# spring:
-#   jpa:
-#     show-sql: true
-#   h2:
-#     console:
-#       enabled: true
-#   datasource:
-#     url: jdbc:h2:mem:testdb
-#   cloud:
-#     loadbalancer:
-#       ribbon:
-#         enabled: false
-#   security:
-#     oauth2:
-#       resourceserver:
-#         jwt:
-#           jwk-set-uri: http://localhost:8090/uaa/token_keys
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER:http://localhost:9101/eureka/}
 
-# logging:
-#   level:
-#     root: INFO
-#     com.scg.service: TRACE
-#     org.springframework.web: INFO
-#     org.springframework.web.HttpLogging: DEBUG
-#     org.springframework.security: DEBUG
-#     org.springframework.security.oauth2: DEBUG
+product-configs:
+  productsLimit: 2
 
-# eureka:
-#   client:
-#     serviceUrl:
-#       defaultZone: ${EUREKA_SERVER:http://localhost:9101/eureka/}
+spring:
+  jpa:
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb
 
-# management:
-#   endpoints:
-#     web:
-#       exposure: 
-#         include: '*'
-
-# product-configs:
-#   productsLimit: 2
+okta:
+  oauth2:
+    issuer: https://dev-4559045.okta.com/oauth2/default
+    client-id: 0oa1d5784NKjarKnL5d6
+    client-secret: s5pAwCMOIYOmhHWDmKhQ894rHH_mnwwQIGvuhXJ4
