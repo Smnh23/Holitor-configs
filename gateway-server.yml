@@ -1,59 +1,21 @@
-# eureka:
-#   client:
-#     serviceUrl:
-#       defaultZone: ${EUREKA_SERVER:http://localhost:9101/eureka/}
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER:http://localhost:9101/eureka/}
 
-# spring:
-#   autoconfigure:
-#     # TODO: remove when fixed https://github.com/spring-projects/spring-security/issues/6314
-#     exclude: org.springframework.boot.actuate.autoconfigure.security.reactive.ReactiveManagementWebSecurityAutoConfiguration
-#   thymeleaf:
-#     cache: false
-#   cloud:
-#     loadbalancer:
-#       ribbon:
-#         enabled: false
-#     gateway:
-#       discovery:
-#         locator:
-#           enabled: true
-#       globalcors:
-#         corsConfigurations:
-#           '[/**]':
-#             allowedOrigins: "*"
-#             allowedHeaders:
-#               - content-type
-#             allowedMethods:
-#               - GET
-#       routes:
-#         - id: ms-product
-#           uri: lb://MS-PRODUCT
-#           predicates:
-#             - Path=/product/**
-#   security:
-#     oauth2:
-#       client:
-#         registration:
-#           gateway:
-#             provider: uaa
-#             client-id: gateway
-#             client-secret: secret
-#             authorization-grant-type: authorization_code
-#             redirect-uri-template: "{baseUrl}/login/oauth2/code/{registrationId}"
-#             scope: openid,profile,email,resource.read
-#         provider:
-#           uaa:
-#             authorization-uri: http://localhost:8090/uaa/oauth/authorize
-#             token-uri: http://localhost:8090/uaa/oauth/token
-#             user-info-uri: http://localhost:8090/uaa/userinfo
-#             user-name-attribute: sub
-#             jwk-set-uri: http://localhost:8090/uaa/token_keys
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - TokenRelay
+      routes:
+        - id: ms-product
+          uri: lb://MS-PRODUCT
+          predicates:
+            - Path=/api/product/**
 
-# logging:
-#   level:
-#     root: INFO
-#     org.springframework.web: INFO
-#     org.springframework.web.HttpLogging: DEBUG
-#     org.springframework.security: DEBUG
-#     org.springframework.security.oauth2: DEBUG
-#     org.springframework.cloud.gateway: DEBUG
+okta:
+  oauth2:
+    issuer: https://dev-4559045.okta.com/oauth2/default
+    client-id: 0oa1d5784NKjarKnL5d6
+    client-secret: s5pAwCMOIYOmhHWDmKhQ894rHH_mnwwQIGvuhXJ4
