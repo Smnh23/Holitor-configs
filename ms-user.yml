@@ -17,7 +17,7 @@ spring:
           issuer-uri: https://dev-4559045.okta.com/oauth2/default
       client:
         registration:
-          ms-product:
+          ms-user:
             provider: okta
             authorization-grant-type: client_credentials
             scope: user
