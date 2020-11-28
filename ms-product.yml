@@ -18,4 +18,5 @@ spring:
 okta:
   oauth2:
     issuer: https://dev-4559045.okta.com/oauth2/default
-    audience: api://default
+    client-id: 0oa1d5784NKjarKnL5d6
+    client-secret: s5pAwCMOIYOmhHWDmKhQ894rHH_mnwwQIGvuhXJ4
