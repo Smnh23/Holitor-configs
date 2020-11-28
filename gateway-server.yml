@@ -9,10 +9,10 @@ spring:
       default-filters:
         - TokenRelay
       routes:
-        - id: ms-product
-          uri: lb://MS-PRODUCT
+        - id: ms-user
+          uri: lb://MS-USER
           predicates:
-            - Path=/api-product/**
+            - Path=/api-user/**
 
 okta:
   oauth2:
