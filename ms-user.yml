@@ -20,7 +20,7 @@ spring:
           ms-product:
             provider: okta
             authorization-grant-type: client_credentials
-            scope: openid
+            scope: user
             client-id: 0oa1ekuk8goIPhU8P5d6
             client-secret: Xkf0ACWwjAnIxW8WkSD4jEJtEh5I1sVqmiwwqhL_
         provider:
