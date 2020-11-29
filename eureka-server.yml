@@ -13,3 +13,5 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
+
+logging.level.com.netflix.config.sources.URLConfigurationSource: ERROR
