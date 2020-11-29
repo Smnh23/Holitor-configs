@@ -8,6 +8,9 @@ eureka:
 
 spring:
   cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
     gateway:
       default-filters:
         - TokenRelay
@@ -22,3 +25,6 @@ okta:
     issuer: https://dev-4559045.okta.com/oauth2/default
     client-id: 0oa1d5784NKjarKnL5d6
     client-secret: s5pAwCMOIYOmhHWDmKhQ894rHH_mnwwQIGvuhXJ4
+
+
+logging.level.com.netflix.config.sources.URLConfigurationSource: ERROR
