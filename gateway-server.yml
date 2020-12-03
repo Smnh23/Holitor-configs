@@ -27,5 +27,6 @@ okta:
     client-secret: s5pAwCMOIYOmhHWDmKhQ894rHH_mnwwQIGvuhXJ4
     scopes: openid
     rolesClaim: groups
+    audience: api://default
 
 logging.level.com.netflix.config.sources.URLConfigurationSource: ERROR
