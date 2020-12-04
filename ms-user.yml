@@ -19,11 +19,12 @@ spring:
         registration:
           ms-user:
             provider: okta
-            authorization-grant-type: client_credentials
-            scope: user
             client-id: 0oa1ekuk8goIPhU8P5d6
             client-secret: Xkf0ACWwjAnIxW8WkSD4jEJtEh5I1sVqmiwwqhL_
+            authorization-grant-type: client_credentials
+            scopes: openid
             rolesClaim: groups
+            audience: api://default
         provider:
           okta:
             issuer-uri: https://dev-4559045.okta.com/oauth2/default
