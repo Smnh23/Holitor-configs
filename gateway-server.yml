@@ -23,6 +23,10 @@ spring:
           uri: lb://MS-PRODUCT
           predicates:
             - Path=/api-product/**
+        - id: ms-order
+          uri: lb://MS-ORDER
+          predicates:
+            - Path=/api-order/**
 
 okta:
   oauth2:
