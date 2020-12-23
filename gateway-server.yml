@@ -27,6 +27,7 @@ spring:
           uri: lb://MS-ORDER
           predicates:
             - Path=/api-order/**
+            - Path=/api-item/**
 
 okta:
   oauth2:
