@@ -17,7 +17,7 @@ spring:
     console:
       enabled: true
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:file:/data/products
 
 okta:
   oauth2:
