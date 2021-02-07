@@ -1,3 +1,8 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER:http://localhost:9101/eureka/}
+      
 spring:
   cloud:
     loadbalancer:
