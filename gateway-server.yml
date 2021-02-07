@@ -27,6 +27,10 @@ spring:
           uri: lb://MS-ORDER
           predicates:
             - Path=/api-order/**,/api-item/**
+        - id: ms-blog
+          uri: lb://MS-BLOG
+          predicates:
+            - Path=/api-blog/**
 
 okta:
   oauth2:
