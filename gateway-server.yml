@@ -31,6 +31,10 @@ spring:
           uri: lb://MS-BLOG
           predicates:
             - Path=/api-blog/**
+        - id: ms-image
+          uri: lb://MS-IMAGE
+          predicates:
+            - Path=/api-image/**
 
 okta:
   oauth2:
