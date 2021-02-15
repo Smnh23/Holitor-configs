@@ -1,3 +1,6 @@
+product-configs:
+  productsLimit: 2
+
 eureka:
   client:
     serviceUrl:
@@ -11,11 +14,14 @@ spring:
   jpa:
     show-sql: true
     open-in-view: true
+    hibernate:
+      ddl-auto: update
   h2:
     console:
       enabled: true
   datasource:
-    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:file:./holitor-data/products;DB_CLOSE_ON_EXIT=FALSE
 
 okta:
   oauth2:
