@@ -28,10 +28,4 @@ okta:
     issuer: https://dev-4559045.okta.com/oauth2/default
     audience: api://default
 
-management:
-  endpoints:
-    web:
-      exposure: 
-        include: '*'
-
 logging.level.com.netflix.config.sources.URLConfigurationSource: ERROR
