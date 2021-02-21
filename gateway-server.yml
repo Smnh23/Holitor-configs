@@ -15,22 +15,10 @@ spring:
       default-filters:
         - TokenRelay
       routes:
-        - id: ms-image
-          uri: lb://MS-IMAGE
+        - id: holitor-service
+          uri: lb://HOLITOR-SERVICE
           predicates:
-            - Path=/api-image/**
-        - id: ms-user
-          uri: lb://MS-USER
-          predicates:
-            - Path=/api-user/**
-        - id: ms-shop
-          uri: lb://MS-SHOP
-          predicates:
-            - Path=/api-shop/**
-        - id: ms-blog
-          uri: lb://MS-BLOG
-          predicates:
-            - Path=/api-blog/**
+            - Path=/api-holitor/**
 
 okta:
   oauth2:
