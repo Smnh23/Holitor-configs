@@ -33,3 +33,10 @@ okta:
 logging.level.com.netflix.config.sources.URLConfigurationSource: ERROR
 
 server.error.include-message: always
+
+# Disable batch job's auto start 
+spring.batch.job.enabled: false
+spring.main.banner-mode: off
+ 
+# batch input files location
+input.dir: c:/temp/input
