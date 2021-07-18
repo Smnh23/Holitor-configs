@@ -23,7 +23,7 @@ spring:
   datasource:
     url: jdbc:h2:mem:testdb
     sql-script-encoding: UTF-8
-    schema: classpath:schema/shop.sql
+    # schema: classpath:schema/shop.sql
     # driverClassName: org.h2.Driver
     # url: jdbc:h2:file:./holitor-data/data;DB_CLOSE_ON_EXIT=FALSE
 
