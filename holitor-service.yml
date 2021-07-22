@@ -25,7 +25,6 @@ spring:
     sql-script-encoding: UTF-8
 
 spring-batch.data.path: holitor-back-spring/holitor-service/src/main/resources/spring-batch/data
-spring-batch.image.path: holitor-back-spring/holitor-service/src/main/resources/spring-batch/image
 
 okta:
   oauth2:
