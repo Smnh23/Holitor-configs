@@ -29,6 +29,8 @@ spring:
 
 path.to.the.work.dir: holitor-back-spring/holitor-service/src/main/resources/input
 
+spring.batch.initialize-schema: never
+
 okta:
   oauth2:
     issuer: https://dev-4559045.okta.com/oauth2/default
