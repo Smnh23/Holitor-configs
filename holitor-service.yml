@@ -23,13 +23,9 @@ spring:
   datasource:
     url: jdbc:h2:mem:testdb
     sql-script-encoding: UTF-8
-    # schema: classpath:schema/shop.sql
-    # driverClassName: org.h2.Driver
-    # url: jdbc:h2:file:./holitor-data/data;DB_CLOSE_ON_EXIT=FALSE
 
-path.to.the.work.dir: holitor-back-spring/holitor-service/src/main/resources/input
-
-spring.batch.initialize-schema: never
+spring-batch.data.path: holitor-back-spring/holitor-service/src/main/resources/spring-batch/data
+spring-batch.image.path: holitor-back-spring/holitor-service/src/main/resources/spring-batch/image
 
 okta:
   oauth2:
