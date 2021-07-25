@@ -24,7 +24,8 @@ spring:
     url: jdbc:h2:mem:testdb
     sql-script-encoding: UTF-8
 
-spring-batch.data.path: holitor-back-spring/holitor-service/src/main/resources/batch/data
+spring-batch.shop-datas.path: holitor-back-spring/holitor-service/src/main/resources/batch/data/shop
+spring-batch.blog-datas.path: holitor-back-spring/holitor-service/src/main/resources/batch/data/blog
 
 okta:
   oauth2:
