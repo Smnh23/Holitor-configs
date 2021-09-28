@@ -28,6 +28,7 @@ spring-batch.users.path: holitor-back-spring/holitor-service/src/main/resources/
 spring-batch.products.path: holitor-back-spring/holitor-service/src/main/resources/batch/data/products
 spring-batch.posts.path: holitor-back-spring/holitor-service/src/main/resources/batch/data/posts
 spring-batch.vegetables.path: holitor-back-spring/holitor-service/src/main/resources/batch/data/vegetables
+spring-batch.botanical-families.path: holitor-back-spring/holitor-service/src/main/resources/batch/data/botanical-families
 spring-batch.task-types.path: holitor-back-spring/holitor-service/src/main/resources/batch/data/task-types
 
 okta:
