@@ -38,4 +38,4 @@ okta:
 
 logging.level.com.netflix.config.sources.URLConfigurationSource: ERROR
 
-server.error.include-message: always 
+server.error.include-message: always
